@@ -30,7 +30,7 @@ void loop() {
       digitalWrite(A3, 1);
       digitalWrite(A1, 1);
     }
-    //redundant peice of code as the above controls every situation, this would have made it go straight when it wasn't sure what to do
+    // Default case: drive both motors forward if sensor readings do not match expected conditions
     else {
       digitalWrite(A3, 1);
       digitalWrite(A1, 1);
@@ -38,7 +38,7 @@ void loop() {
     relay = 0;
   }
   //controls the PWM intervals, between this and the if statement it would allow for more precise control of how regular it checks
-  relay = relay + 1;
+    relay++;
 
   //delay for stability
   delay(5);
